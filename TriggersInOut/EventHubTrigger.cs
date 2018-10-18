@@ -10,7 +10,7 @@ namespace TriggersInOut
         [FunctionName("EventHubDemoTrigger")]
         public static void Run(
             [EventHubTrigger("group3-demo-eh", Connection = "EventHubConnection")]EventData data, ILogger log,
-            [CosmosDB("group3-triggers-inoutbindings", "eventshub", ConnectionStringSetting = "StorageConnection")] IAsyncCollector<EventResult> result)
+            [CosmosDB("group3-triggers-inoutbindings", "eventshub", ConnectionStringSetting = "CosmosDbConnection")] IAsyncCollector<EventResult> result)
         {
             log.LogInformation($"Event Hub Demo Trigger processed a message: {data}");
 
